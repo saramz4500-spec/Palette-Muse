@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palette Muse</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <div>
+        <span class="badge">Design Tool</span>
+        <h1>Build elegant color palettes</h1>
+        <p>
+          Generate harmonious palettes, preview them in modern designs,
+          save your favorite colors, and export ready-to-use CSS.
+        </p>
+      </div>
+
+      <div class="hero-card" id="heroCard">
+        <h3>Visualize your palette</h3>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="controls">
+        <div>
+          <label>Color</label>
+          <input type="color" id="colorPicker" value="#7c3aed">
+        </div>
+
+        <div>
+          <label>HEX</label>
+          <input type="text" id="hexInput" value="#7C3AED">
+        </div>
+
+        <div>
+          <label>Mode</label>
+          <select id="modeSelect">
+            <option value="analogic">Analogic</option>
+            <option value="monochrome">Monochrome</option>
+            <option value="complement">Complement</option>
+            <option value="triad">Triad</option>
+            <option value="quad">Quad</option>
+          </select>
+        </div>
+
+        <button id="generateBtn">Generate</button>
+      </div>
+
+      <div class="actions">
+        <button onclick="randomColor()">Random</button>
+        <button onclick="copyFullPalette()">Copy Palette</button>
+        <button onclick="savePalette()">Save</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Generated Palette</h2>
+      <div class="palette" id="palette"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Live Preview</h2>
+      <div class="gradient-preview" id="gradientPreview">
+        Preview Background
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Export CSS</h2>
+      <textarea id="cssOutput" readonly></textarea>
+      <button onclick="copyCSS()">Copy CSS</button>
+    </section>
+
+    <section class="panel">
+  <h2>Saved Palettes</h2>
+
+  <div class="saved-actions">
+    <button onclick="clearSavedPalettes()">Clear Saved</button>
+    <button onclick="sharePalette()">Share Palette</button>
+  </div>
+
+  <div class="saved-list" id="savedList"></div>
+</section>
+
+  </div>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  
+  <script src="script.js"></script>
+
+  <footer class="footer">
+  <p>© 2026 Palette Muse | Designed by SMZ </p>
+</footer>
+
+</body>
+</html>
